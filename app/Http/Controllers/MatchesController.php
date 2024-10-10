@@ -42,7 +42,7 @@ class MatchesController extends Controller
         $team2_players=$request->input('team2_players');
         $date=$request->input('match_date');
         if (array_intersect($team1_players, $team2_players)) {
-            return view('pages.createMatch');
+            return back()->with('error','Duplication');
 
         }
 

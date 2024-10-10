@@ -32,16 +32,20 @@ class PlayerController extends Controller
                      ->limit(1);
         });
     })
-    ->get();
+    ->first();
     $team1=" - ";
     $team2=" - ";
     $date=" - ";
-if(!$match->isEmpty()){
+if($match){
+   
 
     $team1=Team::select("Name")->
     where("id",$match->idTeam1)->first();
     $team2=Team::where("id",$match->idTeam2)->first();
 $date=$match->date;
+}else{
+$team1=['Name'=>' '];
+$team2=['Name'=>' '];
 }
 
     return view('pages.player',['data'=>$data,'team1'=>$team1,'team2'=>$team2,'date'=>$date]);

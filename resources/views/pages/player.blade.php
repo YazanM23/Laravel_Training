@@ -32,7 +32,7 @@
 <td>{{$data->Length}}</td>
 <td>{{$data->Weight}}</td>
 <td>{{$data->Team}}</td>
-<td>{{$team1}} vs {{$team2}}</td>
+<td>({{$team1['Name']}} ) VS ({{$team2['Name']}})</td>
 <td>{{$date}}</td>
             </tr>
             </thead>

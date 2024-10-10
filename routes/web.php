@@ -48,12 +48,11 @@ Route::get('/trainer', function () {
     return view('pages.trainer');
 })->name('pages.trainer');
 Route::get('/table',[TableController::class, 'getPlayers'])->name('pages.table') ; 
- // This shows the players table
 Route::put('/table/{username}', [TableController::class, 'updatePlayer'])->name('pages.update');
 Route::delete('/table/{username}', [TableController::class, 'deletePlayer'])->name('pages.delete');
 Route::post('/table', [TableController::class, 'insertPlayer'])->name('pages.store');
-Route::post('/signup', [SignUpController::class, 'signupPlayer'])->name('pages.signupPlayer');
-Route::post('/signup', [SignUpController::class, 'signupTrainer'])->name('pages.signupTrainer');
+Route::post('/signup/player', [SignUpController::class, 'signupPlayer'])->name('pages.signupPlayer');
+Route::post('/signup/trainer', [SignUpController::class, 'signupTrainer'])->name('pages.signupTrainer');
 
 Route::get('/createMatch',[MatchesController::class, 'getPlayers'])->name('pages.createMatch') ; 
 Route::post('/createMatch',[MatchesController::class, 'createMatch'])->name('pages.createMatch') ; 
